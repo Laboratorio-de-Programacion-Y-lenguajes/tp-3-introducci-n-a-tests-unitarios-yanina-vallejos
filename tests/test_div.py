@@ -12,13 +12,17 @@ def test_div_normal():
 
 
 # --- TU TURNO ---
-# Agregá tests para los siguientes casos:
-#   - División que da resultado decimal (float)
-#   - División con números negativos
-#   - División por cero → debe lanzar ZeroDivisionError
-#
-# Pista: para testear excepciones usá pytest.raises:
-#
-# def test_div_por_cero():
-#     with pytest.raises(ZeroDivisionError):
-#         div(10, 0)
+def test_div_resultado_decimal():
+    """División que da resultado decimal (float): 5 / 2 = 2.5"""
+    assert div(5, 2) == 2.5
+
+
+def test_div_numeros_negativos():
+    """División con números negativos: -10 / 2 = -5.0"""
+    assert div(-10, 2) == -5.0
+
+
+def test_div_por_cero():
+    """División por cero debe lanzar ZeroDivisionError."""
+    with pytest.raises(ZeroDivisionError):
+        div(10, 0)
